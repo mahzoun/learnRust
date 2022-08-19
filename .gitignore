@@ -13,3 +13,8 @@ Cargo.lock
 1/hello_cargo/target/
 2/guessing_game/target/*
 3/variables/target/*
+3/datatypes/target/*
+3/functions/target/*
+3/controlflow/target/*
+3/fibonacci/target/*
+4/ownership/target/*
