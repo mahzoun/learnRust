@@ -19,3 +19,4 @@ Cargo.lock
 3/fibonacci/target/*
 4/ownership/target/*
 4/references/target/*
+*/*/target/*
