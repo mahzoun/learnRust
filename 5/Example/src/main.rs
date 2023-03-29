@@ -1,21 +1,17 @@
 #[derive(Debug)]
+
 struct Rectangle {
-    width: u32,
-    height: u32,
-}
-fn main() {
-    let rect = Rectangle{
-        width: 30,
-        height: 50,
-    };
-    println!("Rectangle is {:?}", rect);
-    println!(
-        "The area of Trinagle is {}",
-        area(&rect)
-    );
-    dbg!(&rect);
+    w: u32, 
+    l: u32,
 }
 
-fn area(rect: &Rectangle) -> u32 {
-    rect.width * rect.height
+fn main() {
+    let rect1 = Rectangle{w: 10, l:20};
+    println!("{:#?}", rect1.area());
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.w * self.l
+    }
 }
