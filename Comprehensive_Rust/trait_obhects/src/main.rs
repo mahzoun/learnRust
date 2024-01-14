@@ -24,10 +24,14 @@ impl Pet for Cat {
 
 fn main() {
     let pets : Vec<Box<dyn Pet>> = vec![
-        Box::new(Cat {name: String::from("Walter")}),
+        Box::new(Cat {name: String::from("Waaaaaaaaaaaaaaaaaaa6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666677777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777778888888888888888888888888888888888888888888888xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   lter")}),
         Box::new(Dog {name: String::from("Jessie")}),
     ];
     for pet in pets {
         println!("Pet name is {}", pet.talk());
     }
+    println!("{} {}", std::mem::size_of::<Dog>(), std::mem::size_of::<Cat>());
+    println!("{} {}", std::mem::size_of::<&Dog>(), std::mem::size_of::<&Cat>());
+    println!("{}", std::mem::size_of::<&dyn Pet>());
+    println!("{}", std::mem::size_of::<Box<dyn Pet>>());
 }
