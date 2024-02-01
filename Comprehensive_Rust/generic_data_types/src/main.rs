@@ -4,7 +4,7 @@ struct Point<T> {
     y: T,
 }
 
-impl<T> Point<T> {
+impl<T> Po bbbbbbbbbbbbbbbbbbbbb       int<T> {
     fn coords(&self) -> (&T, &T) {
         (&self.x, &self.y)
     }
