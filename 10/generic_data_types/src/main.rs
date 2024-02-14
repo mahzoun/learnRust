@@ -1,5 +1,9 @@
-fn largest(list: &mut [i32]) -> &i32 {
-    list[1] = 100;
+enum Result<T, S> {
+    Ok(T),
+    Err(S),
+}
+
+fn largest<T: std::cmp::PartialOrd>(list: &mut [T]) -> &T {
     let mut biggest = &list[0];
     for number in list.iter() {
         if number > biggest {
@@ -9,7 +13,7 @@ fn largest(list: &mut [i32]) -> &i32 {
     biggest
 }
 
-fn selection_sort(list: &mut [i32]) -> &[i32] {
+fn selection_sort<S: std::cmp::PartialOrd>(list: &mut [S]) -> &[S] {
     for i in 0..(list.len()) {
         let mut index_min = i;
         for j in (i)..(list.len()){
@@ -17,9 +21,7 @@ fn selection_sort(list: &mut [i32]) -> &[i32] {
                 index_min = j;
             }
         }
-        let temp = list[i];
-        list[i] = list[index_min];
-        list[index_min] = temp;
+        list.swap(i, index_min);
     }
     list
 }
@@ -31,4 +33,7 @@ fn main() {
     for i in v {
         println!("{i}");
     }
+    let mut chars = vec!['d', 'z', 'a', 'c', 'b'];
+    selection_sort(&mut chars);
+    println!("Sorted chars: {:?}", chars);
 }
