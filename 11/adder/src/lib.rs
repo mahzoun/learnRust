@@ -6,6 +6,7 @@ struct Rectangle {
 
 impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
+        println!("hi!");
         self.width > other.width && self.height > other.height
     }
 }
